@@ -8,6 +8,6 @@ echo '    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 echo '    <title>Test page</title>' >> ./bin/index.html
 echo '</head>' >> ./bin/index.html
 echo '<body>' >> ./bin/index.html
-echo '    <h1>Just a test</h1>' >> ./bin/index.html
+echo '    <h1>Just a test 1</h1>' >> ./bin/index.html
 echo '</body>' >> ./bin/index.html
 echo '</html>' >> ./bin/index.html
