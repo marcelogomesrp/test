@@ -1,5 +1,5 @@
 pipeline {
-    
+
 	agent any
 	stages {
         
@@ -32,9 +32,10 @@ pipeline {
                 sh 'printenv'                    
 			}
 		}
-		stage('Step3') {
+		stage('master') {
+            when { expression { env.BRANCH_NAME == "master" } }
 			steps {
-				echo 'step 3'
+				echo 'aqui so master'
 			}
 		}
 	}
