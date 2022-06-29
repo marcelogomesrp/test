@@ -26,15 +26,18 @@ pipeline {
 				echo 'step 1'
 			}
 		}
-		stage('Step2 - Parallel In Sequential') {		    
+		stage('Step2 master only') {
+			when {
+               expression { env.BRANCH_NAME == "master"}
+			}
 			steps {
-			    echo 'step 2 B'
-                sh 'printenv'                    
+			    echo 'step 2 B'                
 			}
 		}
 		stage('Step3') {
 			steps {
 				echo 'step 3'
+				sh 'printenv'
 			}
 		}
 	}
