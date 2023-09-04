@@ -23,7 +23,7 @@ pipeline {
 
 		stage('Step1') {
 			steps {
-				echo '-------> 6 agora -'
+				echo '-------> 9 master -'
 			}
 		}
 		stage('Step2 master only') {
