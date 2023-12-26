@@ -37,12 +37,7 @@ pipeline {
 			script {
 				checkout scm
                     // Verifica se a alteração foi uma tag
-                    if (env.CHANGE_ID.endsWith('tags')) {
-                        echo 'Build logic here'
-                    } else {
-                        echo 'No build for non-tag changes'
-                        currentBuild.result = 'ABORTED'
-                    }
+		    echo env.CHANGE_ID
 
 			}
 		}
