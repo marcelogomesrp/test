@@ -52,7 +52,9 @@ pipeline {
 
 	stage('tst 2') {
 		steps {
+			def tag = sh(script: "git describe", returnStdout: true).trim()
 			script {
+				echo env.tag
 				if (env.TAG_NAME){
 				echo "trigged by th tag:"
 				echo env.TAG_NAME
