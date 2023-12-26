@@ -21,26 +21,26 @@ pipeline {
             }
         }
 
-		stage('Step1') {
+	stage('Step1') {
 			steps {
 				echo '-------> 9 master -'
 			}
-		}
-		stage('Step2 master only') {
+	}
+	stage('Step2 master only') {
 			when {
                expression { env.BRANCH_NAME == "master"}
 			}
 			steps {
 			    echo 'step 2 B'                
 			}
-		}
-		stage('Step3') {
+	}
+	stage('Step3') {
 			steps {
 				echo 'step 3'
 				sh 'printenv'
 			}
-		}
-		stage('eita tag') {
+	}
+	stage('eita tag') {
 		when {
 			buildingTag()
 			beforeAgent true
@@ -48,5 +48,6 @@ pipeline {
 		steps {
 			echo 'algo mudou a tag *****'
 		}
+	}
 	}
 }		
