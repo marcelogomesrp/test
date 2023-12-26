@@ -49,5 +49,20 @@ pipeline {
 			echo 'algo mudou a tag *****'
 		}
 	}
+
+	stage('tst 2') {
+		steps {
+			script {
+				if (env.TAG_NAME){
+				echo "trigged by th tag:"
+				echo env.TAG_NAME
+				}else{
+				echo "trigger by branch, pr or ..."
+				}
+			}
+		}
+	}
+
+
 	}
 }		
