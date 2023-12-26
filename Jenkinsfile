@@ -40,5 +40,13 @@ pipeline {
 				sh 'printenv'
 			}
 		}
+		stage('eita tag') {
+		when {
+			buildingTag()
+			beforeAgent true
+		}
+		steps {
+			echo 'algo mudou a tag *****'
+		}
 	}
 }		
