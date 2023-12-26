@@ -50,20 +50,23 @@ pipeline {
 		}
 	}
 
-	stage('tst 2') {
-		steps {
-			def tag = sh(script: "git describe", returnStdout: true).trim()
-			script {
-				echo env.tag
-				if (env.TAG_NAME){
-				echo "trigged by th tag:"
-				echo env.TAG_NAME
-				}else{
-				echo "trigger by branch, pr or ..."
-				}
-			}
-		}
-	}
+stage('tst 2') {
+    steps {
+        script {
+            def tag = sh(script: "git describe", returnStdout: true).trim()
+            echo env.tag
+            if (env.TAG_NAME) {
+                echo "trigged by th tag:"
+                echo env.TAG_NAME
+            } else {
+                echo "trigger by branch, pr or ..."
+            }
+        }
+    }
+}
+
+
+
 
 
 	}
