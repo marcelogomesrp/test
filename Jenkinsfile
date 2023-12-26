@@ -47,6 +47,13 @@ pipeline {
 				sh 'printenv'
 			}
 	}
+	stage('gtp') {
+		when {
+			expression { changeset ".*refs/tags/.*" }
+		}steps {
+			echo "nova tag"
+		}
+	}
 	stage('eita tag') {
 		when {
 			buildingTag()
