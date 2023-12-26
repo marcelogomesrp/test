@@ -4,7 +4,7 @@ pipeline {
 
 
 	environment {
-		def tag = "sh(script: 'git describe', returnStdout: true).trim()"
+		def tag = sh(script: "git describe", returnStdout: true).trim()
 		//def tagAnterior = sh(script: "git describe --tags \$(git rev-list --tags --max-count 1)", returnStdout: true).trim()
 	}
 
