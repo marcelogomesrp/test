@@ -49,7 +49,7 @@ pipeline {
 	}
 	stage('gtp') {
 		when {
-			expression { changeset ".*refs/tags/.*" }
+			expression { changeset ".*tags/.*" }
 		}
 		steps {
 			echo 'nova tag'
