@@ -1,9 +1,28 @@
 #pegar o md5
 
-git name-rev --name-only 
+git rev-list --tags --max-count 1
 
 # pegar o nome da tag
 git name-rev --name-only 576012d98f0f0f0322eaddbfc460bb02ab9869b0
 
 exemplo: 
 tags/v.8^0
+
+
+git describe --tags $(git rev-list --tags --max-count 1)
+
+git tag -a m1 -m "eita"
+git push origin --tags
+fa9e9a39d2c00c17767a77a5c793ed522520b4f8
+
+
+
+git rev-list --tags -n 1
+fa9e9a39d2c00c17767a77a5c793ed522520b4f8
+
+git describe --tags fa9e9a39d2c00c17767a77a5c793ed522520b4f8
+m1
+
+
+# Pegar o commit ref
+git rev-parse HEAD
