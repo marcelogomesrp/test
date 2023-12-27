@@ -17,6 +17,10 @@ pipeline {
                     checkout scm
 		    sh 'ls -la'
    		    sh 'git log -n 1 --pretty=format:"%H %an %ae %s"'
+   			def commitRef = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+                    def branchName = sh(script: 'git name-rev --name-only ${commitRef}', returnStdout: true).trim()
+		    echo commitRef
+		    echo branchName
                 }
             }
         }
