@@ -19,6 +19,11 @@ pipeline {
             }
         }
 
+	stage('ah'){
+		steps {
+			sh 'printenv'
+		}
+	}
 
         stage('Print Environment Variables') {
             steps {
