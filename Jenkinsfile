@@ -38,6 +38,7 @@ pipeline {
 				checkout scm
                     // Verifica se a alteração foi uma tag
 		    echo env.CHANGE_ID
+		    echo env.BRANCH_NAME
 
 			}
 		}
