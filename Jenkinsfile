@@ -40,6 +40,7 @@ pipeline {
 		    echo env.CHANGE_ID
 		    echo env.BRANCH_NAME
 		    echo env.GIT_COMMIT
+		    echo  "${env.GIT_BRANCH}-${BUILD_ID}"
 
 
 			}
