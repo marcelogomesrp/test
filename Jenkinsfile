@@ -19,6 +19,18 @@ pipeline {
             }
         }
 
+
+    stages {
+        stage('Print Environment Variables') {
+            steps {
+                script {
+                    env.each { key, value ->
+                        echo "Variable: ${key}, Value: ${value}"
+                    }
+                }
+            }
+        }
+
         stage('Build') {
             when {
                 expression {
