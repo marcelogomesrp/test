@@ -15,6 +15,8 @@ pipeline {
                 script {
                     // Realiza o checkout manualmente para permitir o uso do when
                     checkout scm
+		    sh 'ls -la'
+                    sh 'printenv'
                 }
             }
         }
