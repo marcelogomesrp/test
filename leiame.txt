@@ -1,0 +1,9 @@
+#pegar o md5
+
+git name-rev --name-only 
+
+# pegar o nome da tag
+git name-rev --name-only 576012d98f0f0f0322eaddbfc460bb02ab9869b0
+
+exemplo: 
+tags/v.8^0
