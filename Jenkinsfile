@@ -20,7 +20,6 @@ pipeline {
         }
 
 
-    stages {
         stage('Print Environment Variables') {
             steps {
                 script {
