@@ -16,7 +16,7 @@ pipeline {
                     // Realiza o checkout manualmente para permitir o uso do when
                     checkout scm
 		    sh 'ls -la'
-                    sh 'printenv'
+   		    sh 'git log -n 1 --pretty=format:"%H %an %ae %s"'
                 }
             }
         }
