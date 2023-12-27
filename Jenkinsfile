@@ -21,6 +21,9 @@ pipeline {
                     def branchName = sh(script: 'git name-rev --name-only ${commitRef}', returnStdout: true).trim()
 		    echo commitRef
 		    echo branchName
+		                    // Imprime as informações obtidas
+                    echo "Commit Reference: ${commitRef}"
+                    echo "Branch Name: ${branchName}"
                 }
             }
         }
